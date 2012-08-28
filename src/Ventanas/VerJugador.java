@@ -261,8 +261,8 @@ public class VerJugador extends javax.swing.JDialog {
             valor_nombre.setText(resultado.getString(2));
             valor_nom_comp.setText(resultado.getString(3));
             valor_fecha_nac.setText(resultado.getString(4));
-            valor_lugar_nac.setText(resultado.getString(5));
-            valor_posicion.setText(resultado.getString(6));
+            valor_lugar_nac.setText(resultado.getString(6));
+            valor_posicion.setText(resultado.getString(5));
             valor_altura.setText(resultado.getString(7)+" m");
             valor_peso.setText(resultado.getString(8)+" Kg");
             

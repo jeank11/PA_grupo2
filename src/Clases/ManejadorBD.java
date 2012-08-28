@@ -107,6 +107,28 @@ public class ManejadorBD {
         }
     }
     
+        public int modificarJugador(Jugador j){
+            int id_generado;
+        try {
+            String nombre = j.getNombre(), nom_completo = j.getNombre_completo();
+            String lugar_nac = j.getNacionalidad(), posicion = j.getPosicion(), fecha_nac = j.getF_nac().DateToString();
+            Double altura = j.getAltura(), peso = j.getPeso();
+            
+            String consulta = "update jugadores set ('"+nombre+"', '"+nom_completo+"', '"+fecha_nac+"',"+
+                              " '"+posicion+"', '"+lugar_nac+"', '"+altura+"', '"+peso+"')";
+            
+            st.executeUpdate(consulta);
+            ResultSet max_id = st.executeQuery("select max(id_jugador) from jugadores");
+            max_id.next();
+            id_generado = max_id.getInt("id_jugador");
+            return id_generado;
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+            return 0;
+        }
+    }
+    
+    
     public ResultSet selectJugador(Integer id){
         ResultSet res;
         try {
